@@ -6,14 +6,16 @@ This project implements a parser for cron expressions, allowing users to input a
 
 This parser supports the standard cron format with five time fields plus a command:
 
+```
 ┌───────────── minute (0 - 59)
 │ ┌───────────── hour (0 - 23)
 │ │ ┌───────────── day of month (1 - 31)
 │ │ │ ┌───────────── month (1 - 12)
-│ │ │ │ ┌───────────── day of week (0 - 7) (Sunday = 0 or 7)
+│ │ │ │ ┌───────────── day of week (1 - 7) (Sunday = 7)
 │ │ │ │ │
 │ │ │ │ │
-* * * * * 
+* * * * *
+```
 
 ### Supported Special Characters
 
@@ -44,7 +46,8 @@ Note: Complex combinations like `1-6/2` are not currently supported.
 
 The project includes a set of test cases to verify the parser's functionality. Here are some example outputs:
 
-``==================================================
+```
+==================================================
 Input: */15 0 1,15 * 1-5 /usr/bin/find
 --------------------------------------------------
 Output:
@@ -168,7 +171,8 @@ day of month  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 
 month         8
 day of week   1 2 3 4 5 6 7
 command       /usr/bin/august-daily
-==================================================``
+==================================================
+```
 
 
 ## Approach
@@ -189,6 +193,6 @@ The project uses object-oriented principles to separate concerns:
 ## Limitations and Future Improvements
 
 - The parser does not currently support complex combinations like `1-6/2`,...etc
-  - Doesn't support special character like `#`, `?` .... etc
+- Doesn't support special character like `#`, `?` .... etc
 - Error handling could be improved with more specific error messages
 - Support for special strings like `@yearly`, `@monthly`, etc., could be added
