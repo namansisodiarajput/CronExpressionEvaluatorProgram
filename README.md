@@ -194,5 +194,6 @@ The project uses object-oriented principles to separate concerns:
 
 - The parser does not currently support complex combinations like `1-6/2`,...etc
 - Doesn't support special character like `#`, `?` .... etc
+- Month number of days is not dynamic e.g. it's max value is set to 30 only
 - Error handling could be improved with more specific error messages
 - Support for special strings like `@yearly`, `@monthly`, etc., could be added
